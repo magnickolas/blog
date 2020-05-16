@@ -1,0 +1,8 @@
+{{- /* ID */ -}}
+{{- $count := (.scratch.Get "this").count | default 1 -}}
+{{- $id := printf "id-%d" $count -}}
+{{- $count | add 1 | .scratch.SetInMap "this" "count" -}}
+{{- with .content -}}
+    {{- dict $id . | dict "data" | dict "config" | merge ($.scratch.Get "this") | $.scratch.Set "this" -}}
+{{- end -}}
+{{- return $id -}}
