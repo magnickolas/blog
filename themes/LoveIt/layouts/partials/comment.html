@@ -5,6 +5,19 @@
 
 {{- if $comment.enable -}}
     <div id="comments">
+        {{- /* schnack Comment System */ -}}
+        {{- $schnack := $comment.schnack | default dict -}}
+        {{- if $schnack.enable -}}
+        <div class="comments-go-here"></div>
+            <script src="http://localhost:3001/embed.js"
+                data-schnack-slug="{{ .File.BaseFileName }}"
+                data-schnack-target=".comments-go-here">
+            </script>
+            <noscript>
+                Please enable JavaScript to view the comments.
+            </noscript>
+        {{- end -}}
+
         {{- /* Disqus Comment System */ -}}
         {{- $disqus := $comment.disqus | default dict -}}
         {{- if $disqus.enable -}}

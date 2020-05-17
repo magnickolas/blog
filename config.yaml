@@ -14,6 +14,13 @@ menu:
       url: /posts/
       title: ''
       weight: 1
+    - identifier: categories
+      pre: ''
+      post: ''
+      name: Categories
+      url: /categories/
+      title: ''
+      weight: 2
     - identifier: tags
       pre: ''
       post: ''
@@ -26,7 +33,7 @@ menu:
 
 params:
   version: 0.2.X
-  description: Nikolai Oplachko
+  description: ''
   keywords:
     - Theme
     - Hugo
@@ -224,9 +231,11 @@ params:
       Mix: false
     comment:
       enable: true
+      schnack:
+        enable: true
       disqus:
         enable: false
-        shortname: ''
+        shortname: 'biba'
       gitalk:
         enable: false
         owner: ''
@@ -342,7 +351,7 @@ markup:
     startLevel: 2
     endLevel: 6
 author:
-  name: Nikolai Oplachko
+  name: magnickolas
   email: magnickolas@pm.me
   link: ''
 sitemap:
@@ -350,7 +359,7 @@ sitemap:
   filename: sitemap.xml
   priority: 0.5
 Permalinks:
-  posts: ':filename'
+  posts: ':year-:month/:title'
 privacy:
   googleAnalytics: {}
   twitter:
