@@ -1,0 +1,8 @@
+{{- $rel := "" -}}
+
+{{- with .icon -}}
+    {{- partial "plugin/icon.html" . -}}
+{{- end -}}
+{{- with .content -}}
+    {{- . | safeHTML -}}
+{{- end -}}

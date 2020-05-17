@@ -8,12 +8,12 @@
     position: relative;
     margin: 5px 10px;
     @include overflow-wrap(break-word);
-    @include transition(all ease-out 0.3s);
+    @include transition(all ease-out 0.05s);
 
     &:active,
     &:focus,
     &:hover {
-      @include transform(scale(1.2));
+      @include transform(scale(1.05));
     }
 
     sup {

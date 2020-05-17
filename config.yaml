@@ -5,6 +5,25 @@ theme: LoveIt
 
 sectionPagesMenu: "main"
 
+menu:
+  main:
+    - identifier: posts
+      pre: ''
+      post: ''
+      name: Posts
+      url: /posts/
+      title: ''
+      weight: 1
+    - identifier: tags
+      pre: ''
+      post: ''
+      name: Tags
+      url: /tags/
+      title: ''
+      weight: 2
+
+
+
 params:
   version: 0.2.X
   description: Nikolai Oplachko

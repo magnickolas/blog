@@ -1,7 +1,8 @@
 ---
 title: "Installing Ubuntu 19.10 on Zenbook"
 date: 2020-05-16T02:24:08+03:00
-draft: true
+draft: false
+tags: [ubuntu, guide]
 ---
 
 ## Wi-Fi

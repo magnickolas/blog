@@ -60,22 +60,22 @@
                     </a>
                 {{- end -}}
                 {{- if .Site.Params.search.enable -}}
-                    <span class="menu-item search" id="search-desktop">
+                    <div class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="{{ .Site.Params.search.placeholder | default (T `searchPlaceholder`) }}" id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="{{ T `search` }}">
+                        <div class="search-button search-toggle" id="search-toggle-desktop">
                             <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="{{ T `clear` }}">
+                        </div>
+                        <div class="search-button search-clear" id="search-clear-desktop">
                             <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
+                        </div>
                         <span class="search-button search-loading" id="search-loading-desktop">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
-                    </span>
+                    </div>
                 {{- end -}}
-                <a href="javascript:void(0);" class="menu-item theme-switch" title="{{ T "switchTheme" }}">
+                <div class="menu-item theme-switch">
                     <i class="fas fa-adjust fa-fw"></i>
-                </a>
+                </div>
             </div>
         </div>
     </div>

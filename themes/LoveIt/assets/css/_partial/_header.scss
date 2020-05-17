@@ -1,3 +1,5 @@
+@import "../_user_select.scss";
+
 header {
   width: 100%;
   z-index: 150;
@@ -33,7 +35,7 @@ header {
   align-items: center;
   box-sizing: border-box;
   width: 100%;
-  user-select: none;
+  @include no-select;
 }
 
 .header-title {
@@ -77,7 +79,7 @@ header {
     outline: none;
     background-color: $header-background-color;
     vertical-align: baseline !important;
-    @include transition(width 0.3s ease);
+    @include transition(width 0.1s ease);
 
     [theme=dark] & {
       background-color: $header-background-color-dark;
@@ -91,6 +93,17 @@ header {
     position: absolute;
     left: auto;
     right: 1rem;
+    display: inline-block;
+    
+    &:hover {
+      cursor: pointer;
+      font-weight: 900;
+      color: $global-link-hover-color;
+
+      [theme=dark] & {
+        color: $header-hover-color-dark;
+      }
+    }
   }
 
   .search-toggle {
@@ -146,6 +159,10 @@ header {
   @include transform(rotate(225deg));
 }
 
+a {
+  outline: none;
+}
+
 #header-desktop {
   display: block;
   position: fixed;
@@ -158,9 +175,18 @@ header {
 
   .header-wrapper {
     padding: 0 2rem 0 10vh;
+    
 
     .header-title {
       font-size: $header-title-font-size;
+      a:hover {
+        cursor: pointer;
+        color: $header-hover-color;
+        text-decoration: none;
+        [theme=dark] & {
+          color: $global-link-color-dark;
+        }
+      }
     }
 
     .menu {
@@ -171,7 +197,22 @@ header {
         float: right;
       }
 
+      div.menu-item {
+        display: inline-block;
+        &:hover {
+          cursor: pointer;
+          font-weight: 900;
+          color: $global-link-hover-color;
+
+          [theme=dark] & {
+            color: $header-hover-color-dark;
+          }
+
+        }
+      }
+
       .menu-item {
+        outline: none;
         margin: 0 .5rem;
 
         &.delimiter {
@@ -189,6 +230,7 @@ header {
         &.search {
           margin: 0 -.5rem 0 0;
         }
+        
       }
 
       a.active {
@@ -198,6 +240,7 @@ header {
         [theme=dark] & {
           color: $header-hover-color-dark;
         }
+
       }
     }
   }

@@ -30,8 +30,9 @@
 
     @include link(false, true);
 
-    .author {
+    .post-author {
       font-size: 1.05rem;
+      color: $single-link-color;
     }
   }
 

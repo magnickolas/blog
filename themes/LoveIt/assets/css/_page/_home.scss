@@ -6,6 +6,10 @@
 
     .home-avatar {
       padding: .5rem;
+      
+      a {
+        outline: none;
+      }
 
       img {
         display: inline-block;
