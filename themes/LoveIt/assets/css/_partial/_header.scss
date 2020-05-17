@@ -179,14 +179,6 @@ a {
 
     .header-title {
       font-size: $header-title-font-size;
-      a:hover {
-        cursor: pointer;
-        color: $header-hover-color;
-        text-decoration: none;
-        [theme=dark] & {
-          color: $global-link-color-dark;
-        }
-      }
     }
 
     .menu {
