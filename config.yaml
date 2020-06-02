@@ -46,7 +46,7 @@ params:
   app:
     title: Nikolai Oplachko
     noFavicon: false
-    svgFavicon: ''
+    svgFavicon: '/favicon.svg'
     themeColor: '#ffffff'
     iconColor: '#5bbad5'
     tileColor: '#da532c'

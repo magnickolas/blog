@@ -6,6 +6,7 @@
 
     .home-avatar {
       padding: .5rem;
+      @include no-select;
       
       a {
         outline: none;

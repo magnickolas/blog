@@ -1,5 +1,9 @@
 @import "../_partial/_single/toc";
 
+.katex-html>.base {
+  @include no-select;
+}
+
 .single {
   .single-title {
     margin: 1rem 0 .5rem;
@@ -31,7 +35,7 @@
     @include link(false, true);
 
     .post-author {
-      font-size: 1.05rem;
+      font-size: .975rem;
       color: $single-link-color;
     }
   }

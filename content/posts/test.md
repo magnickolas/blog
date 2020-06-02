@@ -19,3 +19,5 @@ int main() {
 {{</admonition>}}
 
 So this is UB
+
+$$f(x) = \int_1^2e(x)e^{\frac{x^2}{2}}dx$$

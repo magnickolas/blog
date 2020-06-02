@@ -81,16 +81,8 @@
       float: left;
     }
 
-    & a.prev:hover {
-      @include transform(translateX(-4px));
-    }
-
     & a.next {
       float: right;
-    }
-
-    & a.next:hover {
-      @include transform(translateX(4px));
     }
   }
 }
