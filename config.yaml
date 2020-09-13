@@ -75,7 +75,7 @@ params:
   footer:
     enable: true
     custom: ''
-    hugo: true
+    hugo: false
     copyright: true
     author: true
     since: 2020
@@ -109,7 +109,7 @@ params:
     Twitter: ''
     Instagram: ''
     Facebook: ''
-    Telegram: magnickolas
+    Telegram: ''
     Medium: ''
     Gitlab: ''
     Youtubelegacy: ''
@@ -176,7 +176,7 @@ params:
     ruby: true
     fraction: true
     fontawesome: true
-    linkToMarkdown: true
+    linkToMarkdown: false
     rssFullText: false
     toc:
       enable: true
@@ -235,7 +235,7 @@ params:
         enable: false
       disqus:
         enable: true
-        shortname: 'biba'
+        shortname: 'magblog'
       gitalk:
         enable: false
         owner: ''

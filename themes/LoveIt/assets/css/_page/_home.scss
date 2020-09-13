@@ -121,7 +121,7 @@
 
     .content {
       @include box(vertical);
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       margin-top: .3rem;
       width: 100%;
       overflow: hidden;

@@ -1,2 +1,2 @@
 all:
-	cd ../.. && hugo -D && rsync -rv public/ /var/www/blog/
+	cd ../.. && hugo -D && rsync -rv public/ /var/www/blog/ --delete

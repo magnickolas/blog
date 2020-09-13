@@ -1,8 +1,8 @@
 ---
-title: "Hello, blog! On creating one"
+title: "The First Post"
 subtitle: ""
 date: 2020-08-30T00:33:59+03:00
-draft: true
+draft: false
 description: ""
 
 tags: []
@@ -15,15 +15,13 @@ featuredImage: ""
 featuredImagePreview: ""
 
 toc:
-  enable: true
+  enable: false
 math:
-  enable: true
+  enable: false
 lightgallery: false
 license: ""
 ---
- 
-This is the first article in my blog. 
 
-## Creating a blog with Hugo
+My blog is taking the beginning right here.
 
-
+I want to use it to express some of the insights I gain in the process of exploring different things. Also, to describe solutions to some problems I encounter. Mostly tech stuff should appear here, but who knows.

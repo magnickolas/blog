@@ -1,8 +1,8 @@
 ---
-title: "Logic programming paradigm with Prolog"
+title: "Logic Programming with Prolog"
 subtitle: ""
 date: 2020-09-13T03:42:00+03:00
-draft: true
+draft: false
 description: ""
 
 tags: [logic-programming, prolog]
@@ -129,7 +129,7 @@ Suppose that you want to check if some list satisfying several conditions exists
 - Its last element is 7
 - Its fourth element is 9
 - It is a palindrome list if we drop the first element
-- Contains value 10 somewhere
+- Contains value 10
 - The length equals 12
 
 We submit the following query that reflects these requirements (using predicates from standard library):
@@ -196,7 +196,7 @@ path(X, Y, P, Visited) :-
 Here we use an accumulator that stores appeared vertices in a path, then utilize the fact of it being a reversed path. However, even if one only wanted to check a path existance, they wouldn't be able to write just something like `path(X, Y) :- X = Y; p(X, Y); p(X, Z), path(Z, Y).`, because if no path exists (e.g. substite $\text{X}$ with $\text{a}$, $\text{Y}$ with $\text{e}$), nothing can disprove the predicate and we'll get "local stack overflow" error.
 {{</admonition>}} 
 
-In particular, we can do the following things now:
+In particular we're able to find a path from a vertex to another vertex, but additionally we can instantly do some other things now:
 
 {{<admonition example "Examples">}}
 - Find a simple path from one vertex to another (in this example from $\text{a}$ to $\text{d}$):

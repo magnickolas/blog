@@ -108,7 +108,7 @@ other = "Table of Contents"
 other = "published on"
 
 [included]
-other = "included in"
+other = " "
 
 [wordCount]
 other = "about {{ .Count }} words"
@@ -138,7 +138,7 @@ other = "Back"
 other = "Home"
 
 [readMore]
-other = "Read More"
+other = "Read"
 # === posts/single.html ===
 
 # === 404.html ===
