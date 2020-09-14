@@ -203,13 +203,13 @@ textarea::placeholder{color:#b4b6bd;}
     .table-wrapper {
       overflow-x: auto;
 
-      &::-webkit-scrollbar {
-        background-color: $table-background-color;
+   //   &::-webkit-scrollbar {
+   //     background-color: $table-background-color;
 
-        [theme=dark] & {
-          background-color: $table-background-color-dark;
-        }
-      }
+   //     [theme=dark] & {
+   //       background-color: $table-background-color-dark;
+   //     }
+   //   }
 
       > table {
         width: 100%;

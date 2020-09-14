@@ -8,7 +8,7 @@ html {
 }
 
 /* scrollbar, only support webkit */
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
   width: .5rem;
   height: .5rem;
 }
@@ -19,7 +19,7 @@ html {
   &:hover {
     background-color: $scrollbar-hover-color;
   }
-}
+}*/
 
 ::selection {
   background-color: $selection-color;
@@ -33,7 +33,7 @@ body {
   background-color: $global-background-color;
   color: $global-font-color;
   @include overflow-wrap(break-word);
-  scrollbar-color: auto;
+  //scrollbar-color: auto;
 
   &[theme=dark] {
     color: $global-font-color-dark;

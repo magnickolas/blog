@@ -12,7 +12,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 
 featuredImage: ""
-featuredImagePreview: ""
+featuredImagePreview: "https://starbeamrainbowlabs.com/images/logos/swi-prolog.svg"
 
 toc:
   enable: true
@@ -26,7 +26,7 @@ license: ""
 
 I'm taking a course in mathematical logic & logic programming in my university. And I wanted to play around with first-order logic in practice. As a bonus, I would be more familiar with a logic programming paradigm.
 
-In order to not complicate things, I chose Prolog language and a compiler [GNU Prolog][gprolog].
+In order to not complicate things, I chose Prolog language and a compiler [GNU Prolog][gprolog] _([SWI-Prolog][swi-prolog]'s logo is less tacky tho')_.
 
 Let's try to represent some examples involving basic concepts and structures with it.
 
@@ -222,4 +222,5 @@ In particular we're able now to find a path from a vertex to another vertex, but
 In this post we've seen how we can apply a logic approach to some prolems and how it's different from imperative/functional ones.
 
 [gprolog]: http://www.gprolog.org/
+[swi-prolog]: https://www.swi-prolog.org/
 [prolog-meme]: https://preview.redd.it/sabq5qemg8321.png?width=640&crop=smart&auto=webp&s=cb11053ece09b3c342dfccc4c26bd259ddd387bc
