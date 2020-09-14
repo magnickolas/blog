@@ -210,16 +210,16 @@ params:
       Tumblr: false
       HackerNews: false
       Reddit: false
-      VK: false
+      VK: true
       Buffer: false
       Xing: false
-      Line: true
+      Line: false
       Instapaper: false
       Pocket: false
       Digg: false
       Stumbleupon: false
       Flipboard: false
-      Weibo: true
+      Weibo: false
       Renren: false
       Myspace: true
       Blogger: true
@@ -235,7 +235,7 @@ params:
         enable: false
       disqus:
         enable: true
-        shortname: 'magblog'
+        shortname: 'magnickolas'
       gitalk:
         enable: false
         owner: ''
@@ -265,7 +265,7 @@ params:
         languageCode: ''
       telegram:
         enable: false
-        siteID: ''
+        siteID: 'H799SnuE'
         limit: 5
         height: ''
         color: ''

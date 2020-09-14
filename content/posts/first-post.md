@@ -24,4 +24,4 @@ license: ""
 
 My blog is taking the beginning right here.
 
-I want to use it to express some of the insights I gain in the process of exploring different things. Also, to describe solutions to some problems I encounter. Mostly tech stuff should appear here, but who knows.
+I want to use it to write down some of the insights I gain in exploring different things. Additionally, to describe solutions to some problems I encounter. Thoughts expression and English skills are also not the top-1 from the bottom priority. Mostly tech stuff should appear here, but who knows.

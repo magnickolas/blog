@@ -196,7 +196,7 @@ path(X, Y, P, Visited) :-
 Here we use an accumulator that stores appeared vertices in a path, then utilize the fact of it being a reversed path. However, even if one only wanted to check a path existance, they wouldn't be able to write just something like `path(X, Y) :- X = Y; p(X, Y); p(X, Z), path(Z, Y).`, because if no path exists (e.g. substite $\text{X}$ with $\text{a}$, $\text{Y}$ with $\text{e}$), nothing can disprove the predicate and we'll get "local stack overflow" error.
 {{</admonition>}} 
 
-In particular we're able to find a path from a vertex to another vertex, but additionally we can instantly do some other things now:
+In particular we're able now to find a path from a vertex to another vertex, but additionally we can instantly do some other things now:
 
 {{<admonition example "Examples">}}
 - Find a simple path from one vertex to another (in this example from $\text{a}$ to $\text{d}$):
