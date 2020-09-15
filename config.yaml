@@ -1,6 +1,6 @@
 baseURL: 'https://oplachko.com/'
 languageCode: en-us
-title: Nikolai Oplachko
+title: Magnickolas' blog
 theme: LoveIt
 
 sectionPagesMenu: "main"
@@ -167,7 +167,7 @@ params:
     Matrix: ''
     Bilibili: ''
     Email: magnickolas@pm.me
-    RSS: true
+    RSS: false
   page:
     hiddenFromHomePage: false
     hiddenFromSearch: false
@@ -311,15 +311,15 @@ params:
     pinterest: ''
     baidu: ''
   analytics:
-    enable: false
+    enable: true
     google:
-      id: ''
+      id: 'UA-178044110-1'
       anonymizeIP: true
     fathom:
       id: ''
       server: ''
   cookieconsent:
-    enable: false
+    enable: true
     content:
       message: ''
       dismiss: ''

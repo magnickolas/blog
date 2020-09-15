@@ -3,7 +3,7 @@ title: "Logic Programming with Prolog"
 subtitle: ""
 date: 2020-09-13T03:42:00+03:00
 draft: false
-description: ""
+description: "Application of the logic programming paradigm to problem solving using Prolog."
 
 tags: [logic-programming, prolog]
 categories: [exploration]
@@ -26,7 +26,7 @@ license: ""
 
 I'm taking a course in mathematical logic & logic programming in my university. And I wanted to play around with first-order logic in practice. As a bonus, I would be more familiar with a logic programming paradigm.
 
-In order to not complicate things, I chose Prolog language and a compiler [GNU Prolog][gprolog] _([SWI-Prolog][swi-prolog]'s logo is less tacky tho')_.
+In order to not complicate things, I chose Prolog language and a compiler [GNU Prolog][gprolog] _([SWI-Prolog][swi-prolog]'s logo is way less tacky tho')_.
 
 Let's try to represent some examples involving basic concepts and structures with it.
 
@@ -193,7 +193,7 @@ path(X, Y, P, Visited) :-
 ```
 
 {{<admonition warning>}}
-Here we use an accumulator that stores appeared vertices in a path, then utilize the fact of it being a reversed path. However, even if one only wanted to check a path existance, they wouldn't be able to write just something like `path(X, Y) :- X = Y; p(X, Y); p(X, Z), path(Z, Y).`, because if no path exists (e.g. substite $\text{X}$ with $\text{a}$, $\text{Y}$ with $\text{e}$), nothing can disprove the predicate and we'll get "local stack overflow" error.
+Here we use an accumulator that stores the appeared vertices in a path, then utilize the fact of it being the reversed path. However, even if one only wanted to check path existance, they wouldn't be able to write just something like `path(X, Y) :- X = Y; p(X, Y); p(X, Z), path(Z, Y).`, because if no path exists (e.g. substite $\text{X}$ with $\text{a}$, $\text{Y}$ with $\text{e}$), nothing can disprove the predicate and we'll get "local stack overflow" error.
 {{</admonition>}} 
 
 In particular we're able now to find a path from a vertex to another vertex, but additionally we can instantly do some other things now:
