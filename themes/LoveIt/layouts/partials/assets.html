@@ -166,7 +166,7 @@
     {{- dict "source" $source "fingerprint" $fingerprint | dict "scratch" .Scratch "data" | partial "scratch/style.html" -}}
     {{- $source := $cdn.cookieconsentJS | default "lib/cookieconsent/cookieconsent.min.js" -}}
     {{- dict "source" $source "fingerprint" $fingerprint | dict "scratch" .Scratch "data" | partial "scratch/script.html" -}}
-    {{- $cookieconsentConfig := dict "popup" (dict "background" "#1aa3ff") "button" (dict "background" "#f0f0f0") | dict "theme" "edgeless" "palette" -}}
+    {{- $cookieconsentConfig := dict "popup" (dict "background" "#259c35") "button" (dict "background" "#f0f0f0") | dict "theme" "edgeless" "palette" -}}
     {{- $cookieconsentConfig = .Site.Params.cookieconsent | merge $cookieconsentConfig -}}
     {{- $cookieconsentConfig = dict "message" ($cookieconsentConfig.content.message | default (T "cookieconsentMessage")) "dismiss" ($cookieconsentConfig.content.dismiss | default (T "cookieconsentDismiss")) "link" ($cookieconsentConfig.content.link | default (T "cookieconsentLink")) | dict "content" | merge $cookieconsentConfig -}}
     {{- $config = $cookieconsentConfig | dict "cookieconsent" | merge $config -}}

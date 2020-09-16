@@ -15,6 +15,6 @@ log.txt
 
 # End of https://www.gitignore.io/api/hugo
 
-/tags
-/tags.lock
-/tags.temp
+tags
+tags.lock
+tags.temp

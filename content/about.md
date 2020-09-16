@@ -22,6 +22,5 @@ lightgallery: false
 license: ""
 ---
 
-# This is about section
+# About
 
-Hello fellows.
