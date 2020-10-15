@@ -12,7 +12,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 
 featuredImage: ""
-featuredImagePreview: "https://starbeamrainbowlabs.com/images/logos/swi-prolog.svg"
+featuredImagePreview: "images/previews/swi-prolog.svg"
 
 toc:
   enable: true
@@ -24,7 +24,7 @@ license: ""
 
 ## Introduction
 
-I'm taking a course in mathematical logic & logic programming in my university. And I wanted to play around with first-order logic in practice. As a bonus, I would be more familiar with a logic programming paradigm.
+I'm taking a course in mathematical logic & logic programming in my university. And I wanted to play around with first-order logic in practice.<!--more--> As a bonus, I would be more familiar with a logic programming paradigm.
 
 In order to not complicate things, I chose Prolog language and a compiler [GNU Prolog][gprolog] _([SWI-Prolog][swi-prolog]'s logo is way less tacky tho')_.
 

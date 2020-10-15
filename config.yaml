@@ -2,6 +2,7 @@ baseURL: 'https://oplachko.com/'
 languageCode: en-us
 title: Magnickolas' blog
 theme: LoveIt
+enableEmoji: true
 
 sectionPagesMenu: "main"
 
@@ -33,7 +34,7 @@ menu:
 
 params:
   version: 0.2.X
-  description: ''
+  description: 'A personal tech blog of a Computer Science student.'
   keywords:
     - Theme
     - Hugo
@@ -191,7 +192,7 @@ params:
       mhchem: true
     code:
       copy: true
-      maxShownLines: 50
+      maxShownLines: 100
     mapbox:
       accessToken: ''
       lightStyle: 'mapbox://styles/mapbox/light-v9'

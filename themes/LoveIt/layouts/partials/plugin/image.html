@@ -13,16 +13,31 @@
             data-sizes="auto"
             alt="{{ $alt }}"{{ with .height }} height="{{ . }}"{{ end }}{{ with .width }} width="{{ . }}"{{ end }} />
     </a>
+    <!--<a class="lightgallery" href="{{ $large | relURL }}" title="{{ .title | default $alt }}" data-thumbnail="{{ $small | relURL }}"{{ with .caption }} data-sub-html="<h2>{{ . }}</h2>{{ with $.alt }}<p>{{ . }}</p>{{ end }}"{{ end }}{{ with .rel }} rel="{{ . }}"{{ end }}>
+        <img
+            class="lazyload{{ with .class }} {{ . }}{{ end }}"
+            src="{{ .src | relURL }}"
+            data-srcset="{{ $small | relURL }}, {{ .src | relURL }} 1.5x, {{ $large | relURL }} 2x"
+            data-sizes="auto"
+            alt="{{ $alt }}"{{ with .height }} height="{{ . }}"{{ end }}{{ with .width }} width="{{ . }}"{{ end }} />
+    </a>-->
 {{- else -}}
     {{- if not .large -}}
         {{- $loading = resources.Get "svg/loading/small.svg" | minify -}}
     {{- end -}}
     <img
         class="lazyload{{ with .class }} {{ . }}{{ end }}"
+        src="{{ .src | relURL }}"
+        data-srcset="{{ $small | relURL }}, {{ .src | relURL }} 1.5x, {{ $large | relURL }} 2x"
+        data-sizes="auto"
+        alt="{{ $alt }}"
+    />
+    <!--<img
+        class="lazyload{{ with .class }} {{ . }}{{ end }}"
         src="{{ $loading.RelPermalink }}"
         data-src="{{ .src | relURL }}"
         data-srcset="{{ $small | relURL }}, {{ .src | relURL }} 1.5x, {{ $large | relURL }} 2x"
         data-sizes="auto"
         alt="{{ $alt }}"
-    />
+    />-->
 {{- end -}}
