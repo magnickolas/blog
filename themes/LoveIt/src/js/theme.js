@@ -88,6 +88,7 @@ class Theme {
                 this.isDark = !this.isDark;
                 window.localStorage && localStorage.setItem('theme', this.isDark ? 'dark' : 'light');
                 for (let event of this.switchThemeEventSet) event();
+                location.reload();
             }, false);
         });
     }

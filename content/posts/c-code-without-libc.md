@@ -48,7 +48,6 @@ Nevertheless, in this post, we'll try to make our programs smaller (maybe a lot)
 
 The fact is that by default, C compilers automatically link our code with [GNU C Library][glibc] and most of the binary size is taken by it, so our initial goal is going to be to make our program independent from that. To make it possible, we need to write an entry point to our program and wrappers for system calls in Assembler. Let's do that (I'm using x86-64 instructions set):
 
-{{< gist magnickolas bafd9caee039e0cfe27329645d9dadbb "start.s" >}}
 ```asm
 # start.s
 .section .text
@@ -352,5 +351,7 @@ $ du -h --apparent-size calc
 ```
 
 The size equals 3.5KB, which is approximately $99.6\\%$ smaller than the initial hello-world program. Sounds fascinating :tada:. Of course, we become seriously limited by the inability to use functions from the standard library. However, the critical point is that we **could** get independent from runtime libraries and thus have almost zero initialization runtime, making C the only good choice for implementing system kernels and developing for cheap microcontrollers. 
+
+Source code of the example is available [here](https://gist.github.com/magnickolas/bafd9caee039e0cfe27329645d9dadbb).
 
 [glibc]: https://www.gnu.org/software/libc/
