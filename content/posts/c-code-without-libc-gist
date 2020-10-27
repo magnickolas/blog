@@ -1,8 +1,8 @@
 ---
-title: "Making C Programs Small: The Beauty of C"
+title: "GISTS"
 subtitle: ""
 date: 2020-10-15T10:00:00+03:00
-draft: false
+draft: true
 description: "We write a program that can work without C standard library and is very lightweight."
 
 tags: [c, asm]
