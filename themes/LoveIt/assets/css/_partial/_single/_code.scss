@@ -207,9 +207,13 @@ code, pre, .highlight table, .highlight tr, .highlight td {
   }
 }
 
-.blob-code-inner {
+.blob-code-inner, .blob-num {
   font-family: $code-font-family;
   font-size: $code-font-size;
+}
+
+.blob-num {
+    pointer-events: none;
 }
 
 .gist-meta {
