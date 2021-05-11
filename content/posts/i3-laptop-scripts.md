@@ -25,7 +25,7 @@ license: ""
 In this post, I want to share some of the scripts I once wrote for myself after installing Linux on my notebook.  
 My configuration on it is [Ubuntu][ubuntu] + [i3wm][i3] + [Polybar][polybar].<!--more-->
 
-All the presented scripts work fine with Bourne shell as well as with [Bash][bash].
+All the presented scripts should work fine with POSIX-compliant shells as long as their listed dependencies work.
 
 By the way, the process of preparing this post forced me to refactor and improve a bit the scripts I haven't touched quite a long time. This is where the advantages of open-source come in. :smirk:
 
@@ -42,9 +42,9 @@ More specifically:
 Script:
 
 ```shell
-#!/usr/bin/env sh
+#!/bin/sh
 
-set -e
+export DISPLAY=:0
 
 get_battery_level() {
     level=$(acpi -b | cut -d',' -f2 | xargs)
@@ -73,9 +73,12 @@ fi
 cur_battery_level=$(get_battery_level)
 timestamp=$(date +'%s')
 
+echo $cur_battery_level
+echo $latest_notify_time
+
 if (! is_charging) && [ \
      $cur_battery_level -lt $BATTERY_THRESHOLD -a \
-       \( -z $latest_notify_time -o \
+       \( -z "$latest_notify_time" -o \
           $timestamp -gt $((latest_notify_time+NOTIFY_DELAY)) \
        \) \
    ]; then
@@ -97,7 +100,7 @@ Dependencies:
 
 To periodically run it I used crontab:
 
-`* * * * * XDG_RUNTIME_DIR=/run/user/$(id -u) ~/scripts/battery_notification.sh >/dev/null 2>&1`
+`* * * * * ~/scripts/battery_notification.sh >/dev/null 2>&1`
  
 ## Soft altering of screen brightness
 
@@ -109,7 +112,7 @@ Thus I needed some strategy of accounting low brightness level values. I decided
 Script:
 
 ```shell
-#!/usr/bin/env sh
+#!/bin/sh
 
 if_expr() {
     [ ! $(echo "$1" | bc) -eq 0 ]
@@ -187,7 +190,7 @@ The last one is a tiny script for a status bar that indicates whether the AC ada
 Script:
 
 ```shell
-#!/usr/bin/env sh
+#!/bin/sh
 
 status=$(acpi -b)
 if [ "$status" != "${status%'Discharging'*}" ]; then
@@ -216,6 +219,5 @@ interval = 5
 [i3]: https://i3wm.org/
 [ubuntu]: https://ubuntu.com/
 [polybar]: https://github.com/polybar/polybar
-[bash]: https://tiswww.case.edu/php/chet/bash/bashtop.html
 [acpi]: https://sourceforge.net/projects/acpiclient/
 [libnotify]: https://gitlab.gnome.org/GNOME/libnotify

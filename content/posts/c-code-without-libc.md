@@ -5,8 +5,8 @@ date: 2020-10-15T10:00:00+03:00
 draft: false
 description: "We write a program that can work without C standard library and is very lightweight."
 
-tags: []
-categories: []
+tags: [c, asm]
+categories: [exploration]
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
