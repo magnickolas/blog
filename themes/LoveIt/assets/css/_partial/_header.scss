@@ -44,6 +44,11 @@ header {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  background: linear-gradient(0deg, #ffcc00 0%, #ffcc00 42%, #0066cc 42%, #0066cc 100%);
+  -webkit-background: linear-gradient(0deg, #ffcc00 0%, #ffcc00 42%, #0066cc 42%, #0066cc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   @include flex(10);
 }
 

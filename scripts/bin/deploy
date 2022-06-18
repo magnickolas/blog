@@ -1,0 +1,2 @@
+#!/bin/sh
+hugo && rsync -r --delete public/ "$1":/var/www/blog

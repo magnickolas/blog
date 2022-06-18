@@ -1,20 +1,13 @@
-# Created by https://www.gitignore.io/api/hugo
-# Edit at https://www.gitignore.io/?templates=hugo
-
-### Hugo ###
-# Generated files by hugo
 /public/
 /resources/_gen/
-
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
-
+/themes/LoveIt/public/
+/themes/LoveIt/resources/_gen/
+.hugo_build.lock
 log.txt
-
-# End of https://www.gitignore.io/api/hugo
 
 tags
 tags.lock
 tags.temp
+
+*~
+.nvimrc*

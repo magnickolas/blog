@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+import re
+from argparse import ArgumentParser, Namespace
+from os import chdir, environ, getcwd
+from os.path import join
+from subprocess import PIPE, Popen
+from sys import stdin, stdout
+
+from bs4 import BeautifulSoup, Tag
+from git.repo import Repo
+
+
+class Workdir:
+    def __init__(self, path: str) -> None:
+        self.path = path
+
+    def __enter__(self):
+        self.prev_path = getcwd()
+        chdir(self.path)
+
+    def __exit__(self, *_):
+        chdir(self.prev_path)
+
+
+def embed_fonts(
+    s: str,
+    workdir: str,
+    fonts_path: str,
+) -> str:
+    with Workdir(workdir):
+        with Popen(
+            ["pipenv", "run", "python", "svgoptim.py", "-"],
+            stdin=PIPE,
+            stdout=PIPE,
+            env=dict(environ, SVGOPTIM_FONT_DIR=fonts_path),
+        ) as proc:
+            assert proc.stdin is not None
+            assert proc.stdout is not None
+            proc.stdin.write(s.encode())
+            proc.stdin.close()
+            return proc.stdout.read().decode()
+
+
+def remove_background(
+    s: str,
+) -> str:
+    soup = BeautifulSoup(s, "xml")
+    rect = soup.find(
+        "rect",
+        attrs={"x": 0, "y": 0},
+    )
+    if rect:
+        rect.extract()
+    return str(soup)
+
+
+def set_local_font(
+    s: str,
+    font: str,
+) -> str:
+    soup = BeautifulSoup(s, "xml")
+    style = soup.find(
+        "style",
+        attrs={"class": "style-fonts"},
+    )
+    if not isinstance(style, Tag) or style.string is None:
+        return s
+    style.string += f"""@font-face {{
+        font-family: "{font}";
+        src: url("");
+    }}"""
+    for x in soup.find_all(
+        "text",
+        attrs={"font-family": re.compile("^LocalFont.*")},
+    ):
+        x["font-family"] = font
+    return str(soup)
+
+
+def parse_args() -> Namespace:
+    parser = ArgumentParser(
+        description=(
+            "Helper wrapper around svgoptim to prepare"
+            "SVGs exported from Excalidraw for publication"
+        )
+    )
+    parser.add_argument(
+        "--local-font",
+        type=str,
+        default="Iosevka Term",
+    )
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+    scripts_path = join(
+        str(Repo(".", search_parent_directories=True).working_tree_dir),
+        "scripts",
+    )
+    fonts_path = join(scripts_path, "fonts")
+    workdir = join(
+        scripts_path,
+        "svgoptim",
+    )
+    s = set_local_font(stdin.read(), args.local_font)
+    s = remove_background(s)
+    s = embed_fonts(s, workdir, fonts_path)
+    stdout.write(s)
+
+
+if __name__ == "__main__":
+    main()

@@ -368,7 +368,7 @@ class Theme {
                     $copy.title = this.config.code.copyTitle;
                     const clipboard = new ClipboardJS($copy);
                     clipboard.on('success', _e => {
-                        this.util.animateCSS($code, 'flash');
+                        this.util.animateCSS($code, 'fadeIn');
                     });
                     $header.appendChild($copy);
                 }

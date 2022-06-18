@@ -4,7 +4,7 @@ github:
   prefix: https://github.com/
   title: GitHub
   icon:
-    class: fab fa-github-alt fa-fw
+    class: fab fa-github-square fa-fw
 
 # 002: LinkedIn
 linkedin:
@@ -16,11 +16,11 @@ linkedin:
 
 # 003: Twitter
 twitter:
-  weight: 3
+  weight: 4
   prefix: https://twitter.com/
   title: Twitter
   icon:
-    class: fab fa-twitter fa-fw
+    class: fab fa-twitter-square fa-fw
 
 # 004: Instagram
 instagram:
@@ -40,11 +40,11 @@ facebook:
 
 # 006: Telegram
 telegram:
-  weight: 6
+  weight: 3
   prefix: https://t.me/
   title: Telegram
   icon:
-    class: fab fa-telegram-plane fa-fw
+    class: fab fa-telegram fa-fw
 
 # 007: Medium
 medium:
@@ -508,4 +508,4 @@ rss:
   title: RSS
   newtab: true
   icon:
-    class: fas fa-rss fa-fw
+    class: fas fa-rss-square fa-fw

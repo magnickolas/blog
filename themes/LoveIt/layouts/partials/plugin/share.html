@@ -22,13 +22,6 @@
         </a>
     {{- end -}}
 
-    {{- /* 004: WhatsApp */ -}}
-    {{- if $share.Whatsapp -}}
-        <a href="javascript:void(0);" title="{{ T `shareOn` }} WhatsApp" data-sharer="whatsapp" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-web>
-            {{- dict "class" "fab fa-whatsapp fa-fw" | partial "plugin/icon.html" -}}
-        </a>
-    {{- end -}}
-
     {{- /* 005: Viber */ -}}
     {{- if $share.Viber -}}
         <a href="javascript:void(0);" title="{{ T `shareOn` }} Viber" data-sharer="viber" data-url="{{ .Permalink }}" data-title="{{ .Title }}">
@@ -61,6 +54,19 @@
     {{- if $share.Reddit -}}
         <a href="javascript:void(0);" title="{{ T `shareOn` }} Reddit" data-sharer="reddit" data-url="{{ .Permalink }}">
             {{- dict "class" "fab fa-reddit fa-fw" | partial "plugin/icon.html" -}}
+        </a>
+    {{- end -}}
+
+    {{- if $share.Telegram -}}
+    <a href="https://t.me/share/url?url={{ .Permalink }}&text={{ .Title }}">
+            {{- dict "class" "fab fa-telegram fa-fw" | partial "plugin/icon.html" -}}
+    </a>
+    {{- end -}}
+
+    {{- /* 004: WhatsApp */ -}}
+    {{- if $share.Whatsapp -}}
+        <a href="javascript:void(0);" title="{{ T `shareOn` }} WhatsApp" data-sharer="whatsapp" data-url="{{ .Permalink }}" data-title="{{ .Title }}" data-web>
+            {{- dict "class" "fab fa-whatsapp fa-fw" | partial "plugin/icon.html" -}}
         </a>
     {{- end -}}
 

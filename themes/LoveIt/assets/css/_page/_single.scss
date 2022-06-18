@@ -1,35 +1,5 @@
 @import "../_partial/_single/toc";
 
-.schnack-login-status{display:block;text-align:right;margin-bottom:8px;}
-.schnack-user{font-size:16px;}
-.schnack-signout:hover{-webkit-text-decoration:none;text-decoration:none;color:#19191A;}
-.schnack-above{text-align:left;}
-.schnack-comments{font-size:1em;list-style:none;padding:0;text-align:left;}
-.schnack-comment{padding:0.8em 0;border-top:1px solid rgba(0,0,0,.09);}
-.schnack-author{color:#4A126B;font-weight:bold;line-height:1.6em;}
-.schnack-author a:hover{color:#19191A;-webkit-text-decoration:none;text-decoration:none;}
-.schnack-date{display:block;font-size:12px;}
-.schnack-date a{color:#6f6f6f;}
-.schnack-date a:hover{color:#444;-webkit-text-decoration:none;text-decoration:none;}
-.schnack-body{font-size:16px;margin:0;padding:0;line-height:1.4em;}
-.schnack-body > p{font-size:1em;}
-.schnack-body{resize:none;overflow:auto;}
-pre{background-color:rgba(146,146,146,0.15);padding:.3em;overflow:auto;}
-.schnack-awaiting-approval{font-family:inherit;font-style:italic;color:#b4b6bd;}
-.schnack-button, .schnack-reply, .schnack-preview, .schnack-write, .schnack-cancel-reply{font-size:0.8em;font-weight:semi-bold;line-height:1.2em;color:#6f6f6f;border:1px solid #6f6f6f;padding:8px;text-transform:capitalize;-webkit-transition:all .1s ease-in;transition:all .1s ease-in;margin:8px 0;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:none;}
-.schnack-button:hover, .schnack-reply:hover, .schnack-preview:hover, .schnack-write:hover, .schnack-cancel-reply:hover{color:#4A126B;border:1px solid #4A126B;}
-.schnack-button:focus, .schnack-reply:focus, .schnack-preview:focus, .schnack-write:focus, .schnack-cancel-reply:focus{outline:none;}
-.schnack-action{display: none;}
-.schnack-form .schnack-body{width:100%;padding:5px;}
-textarea::-webkit-input-placeholder{color:#b4b6bd;}
-textarea::-moz-placeholder{color:#b4b6bd;}
-textarea:-ms-input-placeholder{color:#b4b6bd;}
-textarea::placeholder{color:#b4b6bd;}
-.schnack-comments .schnack-comments .schnack-comment{box-shadow:none;border:0;border-top:1px solid rgba(0,0,0,.09);}
-.schnack-signin-twitter,.jGAJPe .schnack-signin-github{border:none;color:#4A126B;margin-top:4px;margin-right:3px;cursor:pointer;font-weight:bold;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:none;}
-.schnack-icon-twitter,.jGAJPe .schnack-icon-github{display:inline-block;font:normal normal normal 16px/1 FontAwesome;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0);color:inherit;-webkit-transition:all .1s ease-in;transition:all .1s ease-in;}
-.schnack-signin-twitter:hover,.jGAJPe .schnack-signin-github:hover{color:#19191A;}
-.schnack-signin-twitter:focus,.jGAJPe .schnack-icon-github:focus{outline:none;}
 
 .katex-html>.base {
   @include no-select;

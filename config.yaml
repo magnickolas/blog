@@ -3,6 +3,7 @@ languageCode: en-us
 title: Magnickolas' blog
 theme: LoveIt
 enableEmoji: true
+enableGitInfo: true
 
 sectionPagesMenu: "main"
 
@@ -107,10 +108,10 @@ params:
   social:
     GitHub: magnickolas
     Linkedin: magnickolas
-    Twitter: ''
+    Twitter: magnickolas
     Instagram: ''
     Facebook: ''
-    Telegram: ''
+    Telegram: magnickolas
     Medium: ''
     Gitlab: ''
     Youtubelegacy: ''
@@ -167,8 +168,8 @@ params:
     XMPP: ''
     Matrix: ''
     Bilibili: ''
-    Email: magnickolas@pm.me
-    RSS: false
+    Email: magnickolas@gmail.com
+    RSS: true
   page:
     hiddenFromHomePage: false
     hiddenFromSearch: false
@@ -177,7 +178,7 @@ params:
     ruby: true
     fraction: true
     fontawesome: true
-    linkToMarkdown: false
+    linkToMarkdown: true
     rssFullText: false
     toc:
       enable: true
@@ -192,26 +193,27 @@ params:
       mhchem: true
     code:
       copy: true
-      maxShownLines: 100
+      maxShownLines: 80
     mapbox:
       accessToken: ''
       lightStyle: 'mapbox://styles/mapbox/light-v9'
       darkStyle: 'mapbox://styles/mapbox/dark-v9'
-      navigation: true
-      geolocate: true
-      scale: true
-      fullscreen: true
+      navigation: false
+      geolocate: false
+      scale: false
+      fullscreen: false
     share:
       enable: true
+      Telegram: true
       Twitter: true
       Facebook: true
-      Linkedin: false
+      Linkedin: true
       Whatsapp: true
       Pinterest: false
       Tumblr: false
       HackerNews: false
-      Reddit: false
-      VK: true
+      Reddit: true
+      VK: false
       Buffer: false
       Xing: false
       Line: false
@@ -222,11 +224,11 @@ params:
       Flipboard: false
       Weibo: false
       Renren: false
-      Myspace: true
-      Blogger: true
+      Myspace: false
+      Blogger: false
       Baidu: false
       Odnoklassniki: false
-      Evernote: true
+      Evernote: false
       Skype: false
       Trello: false
       Mix: false
@@ -312,7 +314,7 @@ params:
     pinterest: ''
     baidu: ''
   analytics:
-    enable: true
+    enable: false
     google:
       id: 'UA-178044110-1'
       anonymizeIP: true
@@ -320,7 +322,7 @@ params:
       id: ''
       server: ''
   cookieconsent:
-    enable: true
+    enable: false
     content:
       message: ''
       dismiss: ''
@@ -353,7 +355,7 @@ markup:
     endLevel: 6
 author:
   name: magnickolas
-  email: magnickolas@pm.me
+  email: magnickolas@gmail.com
   link: ''
 sitemap:
   changefreq: weekly

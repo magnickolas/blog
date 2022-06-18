@@ -1,0 +1,3 @@
+[submodule "scripts/svgoptim"]
+	path = scripts/svgoptim
+	url = https://git.dzx.fr/gdzx/svgoptim/

@@ -1,3 +1,0 @@
-- [ ] Add noscript-support
-  - [ ] Fix lazyload
-  - [ ] Switch dark theme

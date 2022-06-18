@@ -22,11 +22,11 @@ lightgallery: false
 license: ""
 ---
 
-This post series is dedicated to the description and implementation of sorting array on a graphics processing unit. It'll be split into two parts.
+This post series is dedicated to the description and implementation of sorting an array with a graphics processing unit (GPU). It'll be split into two posts.
 
-In this part, we'll try to derive one of the first efficient parallel sorting algorithm from the [sorting networks](https://en.wikipedia.org/wiki/Sorting_network) class. What's specific is that before performing some sorting algorithm from this class, we already know which fixed positions elements we'll compare-and-swap at.
+In this part, we'll first try to derive one of the earliest comparably efficient parallel sorting algorithm from the [sorting networks](https://en.wikipedia.org/wiki/Sorting_network) class. What's remarkable for this class of sorting algorithms, is that before performing the algorithm, we already know the whole sequence of pairs of indices to be compared and swapped (if needed).
 
-Then we'll calculate the algorithm's serial and parallel time complexities.
+Then we'll calculate the algorithm's theoretical serial and parallel time complexities.
 
 ## Batcher's algorithm's scheme description
 
@@ -34,33 +34,33 @@ For simplicity of visualization let the array be of 8 elements, the idea's able 
 
 Here our array is (the odd elements are colored green, the even ones are gray):
 
-![](/images/parallel-sorting-on-gpu/array.png)
+<img src="/images/parallel-sorting-on-gpu-part-1/array.svg" width="100%">
 
 **1. Let's sort the first and the second halves of the array separately.**
 
 Now our array is partially sorted. Arrow means: the source of it is not greater than the destination.
 
-![](/images/parallel-sorting-on-gpu/halves.png)
+<img src="/images/parallel-sorting-on-gpu-part-1/halves.svg" width="100%">
 
-Now we're facing a problem of sorting an array that has its halves sorted.
+Now we're facing a problem of sorting <ins>an array that has its halves sorted</ins>.
 
-First, we're going to solve the same problem for all odd (green) and even (gray) elements separately. Two additional problems are now here, but then we say magic words *\*divide and conquer\** and they're already solved!
+First, we're going to solve the same problem for all odd (green) and even (gray) elements separately. Two additional problems are now here, but then we say magic words \*\*divide and conquer\*\* and they're already solved!
 
 **2. Sort all the odd and all the even elements separately**
 
 After approaching these two subproblems we've obviously got knowledge of elements being sorted in the odd/even partition:
 
-![](/images/parallel-sorting-on-gpu/halves_sorted.png)
+<img src="/images/parallel-sorting-on-gpu-part-1/halves_sorted.svg" width="100%">
 
 But previously we've sorted the halves of the array, and it may give us some extra information. Let's examine it by writing out some facts:
 
 - Every gray element has some green element that is less or equal to it. Consequently, after sorting both subarrays, every gray element can't be less than the previous green one.
 
-![](/images/parallel-sorting-on-gpu/halves_sorted_pairs.png)
+<img src="/images/parallel-sorting-on-gpu-part-1/halves_sorted_pairs.svg" width="100%">
 
 - Every (except $1^{\text{st}}$ and $5^{\text{th}}$) green element has some gray element that is less or equal to it. Consequently, after sorting both subarrays, every green element can't be less than the grey one three positions before it.
 
-![](/images/parallel-sorting-on-gpu/halves_odd_even.png)
+<img src="/images/parallel-sorting-on-gpu-part-1/halves_odd_even.svg" width="100%">
 
 If we look now at the picture, it can be determined that the first and the last elements are in their right positions. Between them, there are consequent non-overlapping pairs such that if we group them into "super-elements", the array would be sorted (e.g. $a[2] \le a[4],a[5]$ and $a[3] \le a[4],a[5]$).
 
@@ -68,7 +68,7 @@ Thus, the rest is to compare and probably swap the following pairs: $(2,3), (4,5
 
 **3. Sort all consequent non-overlapping pairs starting from the second element and to the last but one.**
 
-![](/images/parallel-sorting-on-gpu/sorted.png)
+<img src="/images/parallel-sorting-on-gpu-part-1/sorted.svg" width="100%">
 
 ## Elimination of restriction on array size
 
@@ -77,7 +77,7 @@ What if the size of the array $a$ (let it be $n$) to be sorted is not of $\lbrac
 $$a^\prime[i]= \begin{dcases} a[i],& 1\le i\le n\\\ \infty,& n < i\le n^\prime \end{dcases},$$
 $$\text{where}\ n^\prime = \min \lbrace x\\, |\\, x \ge n,\\,x \in \lbrace 2^k\ |\ k \ge 0 \rbrace \rbrace$$
 
-and sort $a^\prime$. Moreover, it's not necessary to convert it programmatically: we can just check if some of the elements to be compared are out of bound, and if that's the case, do nothing. 
+and sort $a^\prime$. Moreover, it's not necessary to convert it programmatically: we can just check if some of the elements to be compared are out of bound, and if that's the case, do nothing.
 
 ## Serial time complexity
 
@@ -98,8 +98,15 @@ The serial time complexity is $O(n\cdot \log^2(n))$.
 
 ## Parallel time complexity
 
-Suppose that we have an infinite number of compute cores (so we can pick arbitrary amount of them to run simultaneously) and want to parallelize our sorting algorithm. Let's notice that for array of size $n$ we compute $O(\log^2(n))$ layers that are dependent in recursion tree. Each layer in this recursion performs many independent comparisons and swaps for the whole array. Thus, since the cost of one layer is $O(1)$, the total time complexity will be $O(\log^2(n))$.
+Suppose that we have <ins>an infinite number</ins> of compute cores (so that we're able to run an arbitrary amount of them) and want to parallelize our sorting algorithm. Let's notice, that:
+- for an array of size $n$ we compute $O(\log^2(n))$ sequentially dependent layers in the recursion tree;
+- each layer performs $O(n)$ independent of each other comparisons-and-swaps on the array;
+- since we can run $O(n)$ of compute cores for each layer, the time complexity for a single layer is $O(1)$.
 
-## Running algorithm on GPU
+Thus, the total time complexity will be $O(\text{number of layers})$ = $O(\log^2(n))$.
 
-We're gonna look at the implementation in the second part. To achieve constant extra memory, the algorithm will be a non-recursive version of Batcher's sorting algorithm.
+## Running the algorithm on GPU
+
+We're gonna look at an efficient implementation in the [second part][part-2]. To achieve $O(1)$ of extra memory, we will transform the algorithm into an iterative form.
+
+[part-2]: {{< ref "parallel-sorting-on-gpu-part-2" >}}
