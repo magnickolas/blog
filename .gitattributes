@@ -1,0 +1,5 @@
+/themes/** linguist-detectable=false
+/scripts/** linguist-detectable=false
+/archetypes/** linguist-detectable=false
+/static/** linguist-detectable=false
+*.yaml linguist-detectable=false
