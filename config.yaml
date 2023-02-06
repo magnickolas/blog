@@ -1,6 +1,6 @@
 baseURL: 'https://oplachko.com/'
 languageCode: en-us
-title: Magnickolas' blog
+title: magnickolas' blog
 theme: LoveIt
 enableEmoji: true
 enableGitInfo: true
