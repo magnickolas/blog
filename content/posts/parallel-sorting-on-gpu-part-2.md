@@ -69,7 +69,7 @@ This implementation doesn't change the passed array **a**, building a new one in
 
 ### Transition to in-place form
 
-To make the rest of this article easier to grasp, we'll rewrite the described above snippet to not create copies of the array. In order to do it, we'll transform and pass the state of the recursion. 
+To make the rest of this article easier to grasp, we'll rewrite the described above snippet to not create copies of the array. In order to do it, we'll transform and pass the state of the recursion.
 
 First, consider **merge**: at the very top level it has a continuous fragment of the array **a**. At the second level it indexes two slices **[a[0], a[2], ...]** and **[a[1], a[3], ...]**, which can be expressed with a start index (0 or 1) and step 2. Similarly, for the third layer the step is going to be 4 and indexes are 0, 2, 1 and 3. We also need to know the size of the current slice to be able to know where it ends, which decreases by half when going down the recursion.
 

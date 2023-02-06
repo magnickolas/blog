@@ -35,22 +35,23 @@ menu:
 
 params:
   version: 0.2.X
-  description: 'A personal tech blog of a Computer Science student.'
+  description: 'A personal tech blog of Oplachko Nikolai (magnickolas)'
   keywords:
-    - Theme
-    - Hugo
+    - algorithms
+    - computer science
+    - blog
+    - magnickolas
   defaultTheme: auto
-  gitRepo: ''
+  gitRepo: 'https://github.com/magnickolas/blog'
   fingerprint: ''
   dateFormat: '2006-01-02'
   images:
-    - /logo.png
   app:
     title: Nikolai Oplachko
     noFavicon: false
     svgFavicon: '/favicon.svg'
     themeColor: '#ffffff'
-    iconColor: '#5bbad5'
+    iconColor: ''
     tileColor: '#da532c'
   search:
     enable: true
@@ -92,7 +93,7 @@ params:
     dateFormat: 01-02
     rss: 10
   home:
-    rss: 10
+    rss: 50
     profile:
       enable: true
       gravatarEmail: ''
