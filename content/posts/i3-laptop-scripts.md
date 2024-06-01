@@ -2,8 +2,8 @@
 title: "Three Useful Laptop Scripts"
 subtitle: ""
 date: 2020-09-20T20:44:14+03:00
-draft: false
-description: "Some scripts to increase comfort using Linux with a tiling manager." 
+draft: true
+description: "Some scripts to increase comfort using Linux with a tiling manager."
 
 tags: [scripts, i3]
 categories: [sharing]
@@ -35,10 +35,12 @@ An annoying problem I was facing is that every time I hadn't noticed how the not
 
 Making a simple notification could be the solution to this problem. However, it has not to be annoying.
 More specifically:
+
 - The system shouldn't notify me too often
 - A notification shouldn't appear under any conditions if the battery's charging
 
 ---
+
 Script:
 
 ```shell
@@ -93,6 +95,7 @@ fi
 ```
 
 Dependencies:
+
 - [ACPI][acpi]
 - [Notify-send][libnotify]
 
@@ -101,7 +104,7 @@ Dependencies:
 To periodically run it I used crontab:
 
 `* * * * * ~/scripts/battery_notification.sh >/dev/null 2>&1`
- 
+
 ## Soft altering of screen brightness
 
 When I made a simple script to change screen brightness by some constant value, I noticed that the lowest possible nonzero brightness wasn’t low/flexible enough in a dark environment.
@@ -109,6 +112,7 @@ When I made a simple script to change screen brightness by some constant value, 
 Thus I needed some strategy of accounting low brightness level values. I decided to use a multiplier strategy if the additive one doesn’t apply to the current brightness level.
 
 ---
+
 Script:
 
 ```shell
@@ -168,7 +172,9 @@ else
     echo "         in case of small brightness"
 fi
 ```
+
 Dependencies:
+
 - [bc][bc]
 - [Awk][awk]
 - [Light][light]
@@ -187,6 +193,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/scripts/change_brightness.s
 The last one is a tiny script for a status bar that indicates whether the AC adapter is plugged in and charging the battery.
 
 ---
+
 Script:
 
 ```shell
@@ -199,7 +206,9 @@ else
     echo '⚡'
 fi
 ```
+
 Dependencies:
+
 - [ACPI][acpi]
 
 ---
