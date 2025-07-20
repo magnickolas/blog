@@ -44,6 +44,10 @@ params:
   defaultTheme: auto
   gitRepo: 'https://github.com/magnickolas/blog'
   fingerprint: ''
+  author:
+    name: magnickolas
+    email: magnickolas@gmail.com
+    link: ''
   dateFormat: '2006-01-02'
   images:
   app:
@@ -354,10 +358,6 @@ markup:
   tableOfContents:
     startLevel: 2
     endLevel: 6
-author:
-  name: magnickolas
-  email: magnickolas@gmail.com
-  link: ''
 sitemap:
   changefreq: weekly
   filename: sitemap.xml
