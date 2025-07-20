@@ -366,7 +366,7 @@ Permalinks:
   posts: ':year-:month/:title'
 privacy:
   googleAnalytics: {}
-  twitter:
+  x:
     enableDNT: true
   youtube:
     privacyEnhanced: true
@@ -393,6 +393,4 @@ outputs:
   taxonomy:
     - HTML
     - RSS
-  taxonomyTerm:
-    - HTML
 

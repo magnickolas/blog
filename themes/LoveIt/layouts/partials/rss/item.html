@@ -1,4 +1,4 @@
-{{- $params := .page.Params | merge .site.Params.page | merge (dict "author" .site.Author.name) -}}
+{{- $params := .page.Params | merge .site.Params.page | merge (dict "author" .site.Params.author.name) -}}
 <item>
     <title>
         {{- .page.Title -}}
